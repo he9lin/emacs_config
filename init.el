@@ -76,4 +76,57 @@
 (if (file-exists-p user-specific-dir)
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 
+;; General plugin load path
+(add-to-list 'load-path "~/.emacs.d/vendor")
+
+;; textmate mode
+(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+(require 'textmate)
+(require 'peepopen) ;; use peepopen
+(setq ns-pop-up-frames nil) ;; for peepopen
+(textmate-mode)
+
+;; cucumber feature mode
+(add-to-list 'load-path "~/.emacs.d/vendor/cucumber.el")
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; haml mode
+(add-to-list 'load-path "~/.emacs.d/vendor/haml-mode.el")
+(require 'haml-mode)
+(add-to-list 'auto-mode-alist '("\.scss$" . haml-mode))
+
+;; yasnippet plugin
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet.el")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/plugins/yasnippet.el/snippets")
+
+;; color theme
+(add-to-list 'load-path "~/.emacs.d/themes/color-theme.el")
+(add-to-list 'load-path "~/.emacs.d/themes/color-theme.el/themes")
+(require 'color-theme)
+(load-file "~/.emacs.d/themes/color-theme-railscasts.el")
+(load-file "~/.emacs.d/themes/color-theme-heyook.el")
+(color-theme-railscasts)
+
+;; Default fonts and window size
+(set-face-attribute 'default nil :font "Bitstream Vera Sans Mono-13")
+(add-to-list 'default-frame-alist '(height . 48))
+(add-to-list 'default-frame-alist '(width . 200))
+
+;; magit
+(require 'magit)
+;;; Setup git for magit
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))) 
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
+;; My key bindings
+(global-set-key (kbd "C-o") 'other-window)
+
+;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
+(set-frame-parameter (selected-frame) 'alpha '(95 50))
+(add-to-list 'default-frame-alist '(alpha 95 50))
+
 ;;; init.el ends here
+
