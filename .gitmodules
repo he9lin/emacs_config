@@ -1,3 +1,6 @@
 [submodule "vendor/haml-mode.el"]
 	path = vendor/haml-mode.el
 	url = git://github.com/nex3/haml-mode.git
+[submodule "vendor/cucumber.el"]
+	path = vendor/cucumber.el
+	url = git://github.com/michaelklishin/cucumber.el.git
