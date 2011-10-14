@@ -1,0 +1,3 @@
+[submodule "vendor/haml-mode.el"]
+	path = vendor/haml-mode.el
+	url = git://github.com/nex3/haml-mode.git
