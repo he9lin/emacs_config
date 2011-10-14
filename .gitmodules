@@ -7,3 +7,6 @@
 [submodule "vendor/textmate.el"]
 	path = vendor/textmate.el
 	url = git://github.com/defunkt/textmate.el.git
+[submodule "vendor/sass-mode.el"]
+	path = vendor/sass-mode.el
+	url = git://github.com/nex3/sass-mode.git

@@ -94,7 +94,11 @@
 ;; haml mode
 (add-to-list 'load-path "~/.emacs.d/vendor/haml-mode.el")
 (require 'haml-mode)
-(add-to-list 'auto-mode-alist '("\.scss$" . haml-mode))
+(add-to-list 'auto-mode-alist '("\.haml$" . haml-mode))
+
+;; sass mode
+(add-to-list 'load-path "~/.emacs.d/scss-mode.el")
+(require 'scss-mode)
 
 ;; yasnippet plugin
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet.el")
@@ -107,11 +111,12 @@
 (add-to-list 'load-path "~/.emacs.d/themes/color-theme.el/themes")
 (require 'color-theme)
 (load-file "~/.emacs.d/themes/color-theme-railscasts.el")
-(load-file "~/.emacs.d/themes/color-theme-heyook.el")
 (color-theme-railscasts)
+;; (load-file "~/.emacs.d/themes/color-theme-heyook.el")
+;; (color-theme-select)
 
 ;; Default fonts and window size
-(set-face-attribute 'default nil :font "Bitstream Vera Sans Mono-13")
+;; (set-face-attribute 'default nil :font "Monaco-14")
 (add-to-list 'default-frame-alist '(height . 48))
 (add-to-list 'default-frame-alist '(width . 200))
 
@@ -125,8 +130,9 @@
 (global-set-key (kbd "C-o") 'other-window)
 
 ;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
-(set-frame-parameter (selected-frame) 'alpha '(95 50))
-(add-to-list 'default-frame-alist '(alpha 95 50))
+;;(set-frame-parameter (selected-frame) 'alpha '(95 50))
+;;(add-to-list 'default-frame-alist '(alpha 95 50))
+
 
 ;;; init.el ends here
 
