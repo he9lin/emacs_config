@@ -97,8 +97,12 @@
 (add-to-list 'auto-mode-alist '("\.haml$" . haml-mode))
 
 ;; sass mode
-(add-to-list 'load-path "~/.emacs.d/scss-mode.el")
+(add-to-list 'load-path "~/.emacs.d/vendor/scss-mode.el")
 (require 'scss-mode)
+
+;; rspec mode
+(add-to-list 'load-path "~/.emacs.d/vendor/rspec-mode.el")
+(require 'rspec-mode)
 
 ;; yasnippet plugin
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet.el")
@@ -106,33 +110,46 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/plugins/yasnippet.el/snippets")
 
+;; coffeescript
+(add-to-list 'load-path "~/.emacs.d/vendor/coffee.el")
+(require 'coffee-mode)
+
+;; (add-to-list 'load-path "~/.emacs.d/vendor/android-mode.el")
+;; n(require 'android-mode)
+;; (setq android-mode-sdk-dir "~/Projects/android-sdk-macosx")
+
+;; (add-hook 'gud-mode-hook
+;;   (lambda ()
+;;     (add-to-list
+;;      'gud-jdb-classpath "~/Projects/android-sdk-macosx/platforms/android-15/android.jar")))
+
 ;; color theme
 (add-to-list 'load-path "~/.emacs.d/themes/color-theme.el")
 (add-to-list 'load-path "~/.emacs.d/themes/color-theme.el/themes")
 (require 'color-theme)
-(load-file "~/.emacs.d/themes/color-theme-railscasts.el")
-(color-theme-railscasts)
-;; (load-file "~/.emacs.d/themes/color-theme-heyook.el")
-;; (color-theme-select)
+;; (load-file "~/.emacs.d/themes/color-theme-railscasts.el")
+;; (color-theme-zenburn)
+;; (color-theme-railscasts)
 
 ;; Default fonts and window size
-;; (set-face-attribute 'default nil :font "Monaco-14")
-(add-to-list 'default-frame-alist '(height . 48))
-(add-to-list 'default-frame-alist '(width . 200))
+;; (set-face-attribute 'default nil :font "Inconsolata-14")
+(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(width . 210))
 
-;; magit
-(require 'magit)
+;; Magit
+;; (require 'magit)
+
 ;;; Setup git for magit
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))) 
-(setq exec-path (append exec-path '("/usr/local/bin")))
+;; (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))) 
+;; (setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;; My key bindings
 (global-set-key (kbd "C-o") 'other-window)
+(define-key global-map (kbd "<M-RET>") 'cua-set-rectangle-mark)
 
-;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
-;;(set-frame-parameter (selected-frame) 'alpha '(95 50))
-;;(add-to-list 'default-frame-alist '(alpha 95 50))
-
-
+(setq default-tab-width 2)
+;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
+;(set-frame-parameter (selected-frame) 'alpha '(95 50))
+;(add-to-list 'default-frame-alist '(alpha 95 50))
 ;;; init.el ends here
 

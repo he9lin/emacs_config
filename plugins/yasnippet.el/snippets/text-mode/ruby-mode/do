@@ -1,5 +1,5 @@
-#name : do |obj| ... end
+#name : do ... end
 # --
-do |${1:obj}|
-  $1.$0
+do
+  $0
 end
