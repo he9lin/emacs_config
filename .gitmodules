@@ -16,3 +16,6 @@
 [submodule "rspec-mode.el"]
 	path = vendor/rspec-mode.el
 	url = git://github.com/pezra/rspec-mode.git
+[submodule "vendor/rinari.el"]
+	path = vendor/rinari.el
+	url = git://github.com/eschulte/rinari.git

@@ -114,6 +114,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/coffee.el")
 (require 'coffee-mode)
 
+(add-to-list 'load-path "~/.emacs.d/jump-2.el")
+;;rinari
+(add-to-list 'load-path "~/.emacs.d/vendor/rinari.el")
+(require 'rinari)
+
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/android-mode.el")
 ;; n(require 'android-mode)
 ;; (setq android-mode-sdk-dir "~/Projects/android-sdk-macosx")
@@ -127,6 +132,7 @@
 (add-to-list 'load-path "~/.emacs.d/themes/color-theme.el")
 (add-to-list 'load-path "~/.emacs.d/themes/color-theme.el/themes")
 (require 'color-theme)
+
 ;; (load-file "~/.emacs.d/themes/color-theme-railscasts.el")
 ;; (color-theme-zenburn)
 ;; (color-theme-railscasts)
@@ -151,5 +157,6 @@
 ;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
 ;(set-frame-parameter (selected-frame) 'alpha '(95 50))
 ;(add-to-list 'default-frame-alist '(alpha 95 50))
+
 ;;; init.el ends here
 
